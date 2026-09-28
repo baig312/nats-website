@@ -1,0 +1,7 @@
+node_modules/
+package-lock.json
+.gh-config/
+
+# Internal-only — not for the public site
+ALBUM/
+MARKETING-*.md

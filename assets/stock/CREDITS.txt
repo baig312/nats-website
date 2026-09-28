@@ -1,0 +1,38 @@
+NATS website — image sourcing notes
+
+=======================================================================
+CLIENT-SUPPLIED IMAGES (from /ALBUM) — as of 2026-09-28
+=======================================================================
+These files were overwritten with images NATS supplied via the /ALBUM
+folder. No Unsplash attribution applies to them any more. Origin/rights
+of the ALBUM source photos were not stated by the client — confirm
+NATS has the right to use them commercially before this goes live.
+
+svc-fitout.webp            ← ALBUM/NATS-FitOut-Office.jpg
+svc-landscape-pools.webp   ← ALBUM/NATS-Landscaping-Garden.jpg
+svc-automation-cinema.webp ← ALBUM/NATS-Cinema-Room.jpg
+svc-mep.webp               ← ALBUM/NATS-MEP-Ductwork.jpg
+svc-interior-design.webp   ← ALBUM/NATS-InteriorDesign-LivingRoom.jpg
+svc-facilities.webp        ← ALBUM/NATS-Facilities-ControlRoom.jpg
+interior-living.webp       ← ALBUM/NATS-InteriorDesign-Bedroom.jpg
+about-hero.webp            ← ALBUM/NATS-DubaiSkyline-Building.jpg
+pool-villa.webp            ← ALBUM/NATS-Landscaping-Pool.jpg
+landscape-patio.webp       ← ALBUM/NATS-Automation-SmartHome.jpg
+interior-detail.webp       ← ALBUM/NATS-FitOut-Retail.jpg
+fitout-reception.webp      ← ALBUM/NATS-FitOut-Office.jpg
+
+Unused but available in /ALBUM for future project cards or a blog:
+  NATS-MEP-ElectricalPanel.jpg
+  NATS-Facilities-RooftopAC.jpg
+  NATS-DubaiSkyline-Office.jpg (duplicate of assets/projects/office-interior-concept.webp)
+  image_1540e20c.jpg (a 10-photo contact sheet, not a standalone photo — do not publish as-is)
+
+=======================================================================
+REMAINING UNSPLASH PLACEHOLDERS (still in use, free to use commercially)
+=======================================================================
+hero-villa.webp        — Photo by Arthur BAUDRY   https://unsplash.com/@bipow
+cinema.webp            — Photo by Amina           https://unsplash.com/@amina_frther
+pool-infinity.webp     — Photo by big.tiny.belly  https://unsplash.com/@bigtinybelly
+landscape-lawn.webp    — Photo by AZIZ KOURI      https://unsplash.com/@kourigrapher
+automation.webp        — Photo by Jakub Zerdzicki https://unsplash.com/@jakubzerdzicki
+staircase-dark.webp    — Photo by Wesley Shen     https://unsplash.com/@wesleyshen

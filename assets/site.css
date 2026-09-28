@@ -1,0 +1,267 @@
+/* NATS — Naama Albayina Technical Services L.L.C
+   Warm editorial luxury system (cream-led, NATS red accent). */
+
+:root {
+  --cream: #f3ede3;      /* primary warm background */
+  --sand: #e9e1d4;       /* secondary warm background */
+  --espresso: #1e1811;   /* dark sections / footer / overlays */
+  --espresso-2: #171009; /* deepest */
+  --warm-ink: #2a2118;   /* headings on cream */
+  --warm-body: #4a4034;  /* body text on cream */
+  --taupe: #7a6f60;      /* muted labels on cream */
+  --accent: #ec3013;     /* NATS red (legacy default; inner pages) */
+  --accent-ink: #c42a0f;
+  --accent-soft: #c9a06a; /* warm tan for accents on dark */
+  --line: rgba(30, 24, 17, 0.14);
+  --ink: #181615;        /* legacy dark (inner pages / form fields) */
+  --bone: #f3ede3;
+}
+
+/* Warm brown accent theme (homepage). Scoped so legacy dark pages stay unaffected. */
+.theme-warm {
+  --accent: #7a5c3c;      /* rich brown — accents on cream */
+  --accent-ink: #5a4326;  /* darker brown — small text / hovers on cream */
+  --accent-soft: #c9a06a; /* tan — accents on dark image sections */
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  background: var(--cream);
+  color: var(--warm-ink);
+  font-family: 'Manrope', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Serif display */
+.font-display { letter-spacing: 0; }
+h1.font-display, h2.font-display { letter-spacing: -0.005em; }
+
+[id] { scroll-margin-top: 88px; }
+
+/* Eyebrow labels — tracked caps */
+.eyebrow {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+.eyebrow-light { color: var(--accent-soft); }
+
+/* Focus ring */
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------------- Header ---------------- */
+/* Transparent over the hero, dark espresso glass on scroll. Text stays light in both. */
+.site-header {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+.site-header.scrolled {
+  background: rgba(23, 16, 9, 0.90);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  border-bottom-color: rgba(243, 237, 227, 0.14);
+}
+
+/* ---------------- Sections ---------------- */
+.section-cream { background: var(--cream); color: var(--warm-ink); }
+.section-sand  { background: var(--sand);  color: var(--warm-ink); }
+.section-dark  { background: var(--espresso); color: var(--cream); }
+
+/* Cards on cream */
+.card {
+  background: #fbf8f2;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  border-color: rgba(122, 92, 60, 0.55);
+  box-shadow: 0 18px 40px -28px rgba(30, 24, 17, 0.35);
+}
+/* Cards on dark */
+.section-dark .card {
+  background: rgba(243, 237, 227, 0.05);
+  border-color: rgba(243, 237, 227, 0.14);
+}
+.section-dark .card:hover { border-color: rgba(236, 48, 19, 0.5); box-shadow: none; }
+
+/* ---------------- Buttons (pills) ---------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.95rem 1.9rem;
+  font-weight: 600;
+  font-size: 0.88rem;
+  line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: var(--accent-ink); }
+.btn-outline-light { border: 1px solid rgba(243, 237, 227, 0.5); color: var(--cream); }
+.btn-outline-light:hover { border-color: var(--cream); background: rgba(243, 237, 227, 0.08); }
+.btn-outline-dark { border: 1px solid rgba(30, 24, 17, 0.28); color: var(--warm-ink); }
+.btn-outline-dark:hover { border-color: var(--warm-ink); background: rgba(30, 24, 17, 0.04); }
+
+/* ---------------- Media ---------------- */
+.hero-media { position: absolute; inset: 0; overflow: hidden; }
+.hero-media > img { width: 100%; height: 100%; object-fit: cover; }
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(23,16,9,0.72) 0%, rgba(23,16,9,0.32) 38%, rgba(23,16,9,0.86) 100%);
+}
+.tile img { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+.tile:hover img { transform: scale(1.045); }
+
+/* Slow continuous zoom on every full-bleed hero/section image — the site's default motion */
+.hero-media img,
+.hero-slider img {
+  animation: kenburns 26s ease-in-out infinite alternate;
+  transform-origin: 55% 45%;
+  will-change: transform;
+}
+@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.09); } }
+
+/* ---------------- Hero image slider (crossfading background) ---------------- */
+.hero-slider { position: absolute; inset: 0; overflow: hidden; }
+.hero-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation-name: kenburns, hero-fade;
+  animation-duration: 26s, 24s;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-direction: alternate, normal;
+}
+.hero-slider img:nth-child(1) { animation-delay: 0s, 0s; }
+.hero-slider img:nth-child(2) { animation-delay: 0s, 6s; }
+.hero-slider img:nth-child(3) { animation-delay: 0s, 12s; }
+.hero-slider img:nth-child(4) { animation-delay: 0s, 18s; }
+@keyframes hero-fade {
+  0%    { opacity: 0; }
+  4%    { opacity: 1; }
+  21%   { opacity: 1; }
+  29%   { opacity: 0; }
+  100%  { opacity: 0; }
+}
+.hero-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(23,16,9,0.72) 0%, rgba(23,16,9,0.32) 38%, rgba(23,16,9,0.86) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media img, .hero-slider img { animation: none !important; }
+  .hero-slider img:first-child { opacity: 1; }
+}
+
+/* ---------------- Animated stat counters ---------------- */
+.count-up { display: inline-block; }
+
+/* ---------------- Form fields ---------------- */
+.field {
+  width: 100%;
+  padding: 13px 15px;
+  background: #fbf8f2;
+  border: 1px solid rgba(30, 24, 17, 0.20);
+  border-radius: 4px;
+  color: var(--warm-ink);
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+.field::placeholder { color: rgba(74, 64, 52, 0.5); }
+.field:hover { border-color: rgba(30, 24, 17, 0.4); }
+.field:focus { border-color: var(--accent); outline: none; }
+/* Fields on dark */
+.section-dark .field {
+  background: rgba(243, 237, 227, 0.06);
+  border-color: rgba(243, 237, 227, 0.22);
+  color: var(--cream);
+}
+.section-dark .field::placeholder { color: rgba(243, 237, 227, 0.45); }
+
+/* ---------------- Scroll reveal ---------------- */
+.reveal { opacity: 1; }
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------------- Mobile menu ---------------- */
+.mobile-menu { display: none; }
+.mobile-menu.open { display: block; }
+
+/* ---------------- Intro logo animation ---------------- */
+.intro-lock { overflow: hidden; }
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--espresso-2);
+  transition: opacity 0.7s cubic-bezier(0.7, 0, 0.3, 1), transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.intro.done { opacity: 0; transform: translateY(-3%); pointer-events: none; }
+.intro-stack { display: flex; flex-direction: column; align-items: center; }
+.intro-mark { width: 92px; height: 92px; overflow: visible; }
+.intro-mark .bar, .intro-mark .diag { transform-box: fill-box; }
+.intro-mark .bar {
+  transform-origin: bottom center;
+  transform: scaleY(0);
+  animation: nats-bar 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.intro-mark .bar-r { animation-delay: 0.14s; }
+.intro-mark .diag {
+  transform-origin: left top;
+  transform: scaleX(0);
+  opacity: 0;
+  animation: nats-diag 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.5s;
+}
+.intro-word {
+  margin-top: 24px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  font-size: 14px;
+  color: var(--cream);
+  opacity: 0;
+  transform: translateY(6px);
+  animation: nats-word 0.6s ease forwards 0.85s;
+}
+@keyframes nats-bar { to { transform: scaleY(1); } }
+@keyframes nats-diag { to { transform: scaleX(1); opacity: 1; } }
+@keyframes nats-word { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .intro-mark .bar, .intro-mark .diag, .intro-word { animation: none; transform: none; opacity: 1; }
+}
