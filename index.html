@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NATS — Turnkey Fit-Out, MEP, Interior Design &amp; Smart Homes | Dubai, UAE</title>
   <meta name="description" content="Dubai contractor for turnkey fit-out, MEP, interior design, home automation, cinemas, pools and maintenance — one team, one contract. Book a free site visit.">
-  <meta name="theme-color" content="#1e1811">
+  <meta name="theme-color" content="#0e0b08">
   <meta name="keywords" content="fit-out company Dubai, turnkey fit-out UAE, MEP contractor Dubai, interior design Dubai, home automation Dubai, home cinema Dubai, swimming pool contractor Dubai, landscaping Dubai, facilities management Dubai, AMC Dubai">
   <link rel="canonical" href="https://www.natsae.com/">
   <meta property="og:type" content="website">
@@ -24,16 +24,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { theme: { extend: {
-      colors: { accent:'#7a5c3c', coral:'#c9a06a', cream:'#f3ede3', sand:'#e9e1d4', espresso:'#1e1811', warm:'#2a2118', body:'#4a4034', taupe:'#7a6f60', bone:'#f3ede3', ink:'#181615' },
-      fontFamily: { display:['"Cormorant Garamond"','Georgia','serif'], sans:['"Manrope"','system-ui','sans-serif'], mono:['"Manrope"','sans-serif'] },
-    } } };
-  </script>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-600.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-garamond-600.woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/tw.css">
   <link rel="stylesheet" href="assets/site.css">
   <script type="application/ld+json">
   {
@@ -96,12 +90,28 @@
         "name": "NATS — Naama Albayina Technical Services",
         "publisher": { "@id": "https://www.natsae.com/#organization" },
         "inLanguage": "en"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.natsae.com/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Which areas do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "We're based in Al Karama, Dubai and work on villas, apartments and commercial spaces across Dubai and the wider UAE." } },
+          { "@type": "Question", "name": "Do you really handle everything under one contract?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fit-out, MEP, interior design, home automation and cinema, swimming pools, landscaping and ongoing maintenance are all delivered by NATS on one licence, so you deal with a single project lead." } },
+          { "@type": "Question", "name": "Is the first site visit really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We visit the space, understand the brief and give an honest view on budget and timeline before anything is committed." } },
+          { "@type": "Question", "name": "Do you maintain the project after handover?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer annual maintenance contracts (AMC) covering fit-out, MEP and automation systems." } },
+          { "@type": "Question", "name": "How do I get an estimate?", "acceptedAnswer": { "@type": "Answer", "text": "Use our instant cost estimate tool for a ballpark, then book a free site visit for a precise, itemised quote." } }
+        ]
       }
     ]
   }
   </script>
 </head>
-<body class="font-sans bg-cream text-warm theme-warm">
+<body class="font-sans bg-[#0e0b08] text-cream theme-nocturne">
+
+  <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="read-progress" aria-hidden="true"></div>
 
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-full">Skip to content</a>
 
@@ -119,7 +129,7 @@
         <a href="calculator.html" class="hover:text-cream transition-colors">Estimate</a>
         <a href="#approach" class="hover:text-cream transition-colors">Approach</a>
         <a href="about.html" class="hover:text-cream transition-colors">About</a>
-        <a href="contact.html" class="rounded-full bg-accent hover:bg-[#5a4326] text-white px-5 py-2.5 font-semibold tracking-normal transition-colors">Let's talk</a>
+        <a href="contact.html" class="rounded-full bg-[#c9a06a] hover:bg-[#b4894f] text-[#1a1410] px-5 py-2.5 font-semibold tracking-normal transition-colors">Let's talk</a>
       </nav>
       <button data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 text-cream" type="button">
         <span class="sr-only">Toggle menu</span>
@@ -134,10 +144,22 @@
         <a href="calculator.html" class="py-2.5 border-b border-cream/10">Estimate</a>
         <a href="#approach" class="py-2.5 border-b border-cream/10">Approach</a>
         <a href="about.html" class="py-2.5 border-b border-cream/10">About</a>
-        <a href="contact.html" class="mt-3 rounded-full bg-accent text-white px-5 py-3 font-semibold text-center">Let's talk</a>
+        <a href="contact.html" class="mt-3 rounded-full bg-[#c9a06a] text-[#1a1410] px-5 py-3 font-semibold text-center">Let's talk</a>
       </nav>
     </div>
   </header>
+
+  <!-- Sticky mobile call / WhatsApp bar -->
+  <div class="mobile-cta" aria-label="Quick contact">
+    <a class="call" href="tel:+971522299418">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+    <a class="wa" href="https://wa.me/971522299418">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.01c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.29.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.24 1.38.29.14.46.12.62-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.66-.14.27.1 1.7.8 1.99.95z"/></svg>
+      WhatsApp
+    </a>
+  </div>
 
   <main id="main">
 
@@ -151,15 +173,24 @@
       </div>
       <div class="relative w-full mx-auto max-w-[1440px] px-5 sm:px-8 pb-16 sm:pb-24 pt-28">
         <p class="eyebrow eyebrow-light mb-6">Naama Albayina Technical Services — Dubai, UAE</p>
-        <h1 class="font-display text-cream font-medium text-[52px] sm:text-[82px] lg:text-[96px] leading-[0.98] max-w-[15ch]">
+        <h1 class="split font-display text-cream font-medium text-[52px] sm:text-[82px] lg:text-[96px] leading-[0.98] max-w-[15ch]">
           We design it, build it, and <span class="text-[#d8b487] italic">make it smart.</span>
         </h1>
         <p class="text-[16px] sm:text-[18px] leading-relaxed text-cream/80 max-w-[54ch] mt-7">
           Turnkey fit-out, MEP, interiors, smart homes, cinemas, pools and landscaping — delivered and maintained by one team, under one contract, across the UAE.
         </p>
         <div class="flex flex-wrap gap-3.5 mt-9">
-          <a href="contact.html" class="btn btn-accent">Book a private site visit</a>
+          <a href="contact.html" class="btn btn-accent magnetic">Book a private site visit</a>
           <a href="#services" class="btn btn-outline-light">Explore our work</a>
+        </div>
+        <div class="trust mt-11 pt-7 border-t border-cream/15 max-w-[600px]">
+          <div class="ti"><span class="tn">10+</span><span class="tl">Years</span></div>
+          <span class="sep"></span>
+          <div class="ti"><span class="tn">6</span><span class="tl">Services</span></div>
+          <span class="sep"></span>
+          <div class="ti"><span class="tn">DED</span><span class="tl">1592335</span></div>
+          <span class="sep"></span>
+          <div class="ti"><span class="tn">UAE</span><span class="tl">-wide</span></div>
         </div>
       </div>
     </section>
@@ -235,7 +266,7 @@
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          <a href="services.html#fit-out" class="group card overflow-hidden flex flex-col reveal">
+          <a href="services.html#fit-out" class="group card tilt overflow-hidden flex flex-col reveal">
             <div class="tile aspect-[4/3] overflow-hidden">
               <img src="assets/stock/svc-fitout.webp" alt="NATS turnkey office fit-out in Dubai" class="w-full h-full object-cover" loading="lazy" width="1200" height="896">
             </div>
@@ -249,7 +280,7 @@
             </div>
           </a>
 
-          <a href="services.html#landscaping-pools" class="group card overflow-hidden flex flex-col reveal">
+          <a href="services.html#landscaping-pools" class="group card tilt overflow-hidden flex flex-col reveal">
             <div class="tile aspect-[4/3] overflow-hidden">
               <img src="assets/stock/svc-landscape-pools.webp" alt="Landscaped villa garden and pool by NATS" class="w-full h-full object-cover" loading="lazy" width="1200" height="896">
             </div>
@@ -263,7 +294,7 @@
             </div>
           </a>
 
-          <a href="services.html#automation-cinema" class="group card overflow-hidden flex flex-col reveal">
+          <a href="services.html#automation-cinema" class="group card tilt overflow-hidden flex flex-col reveal">
             <div class="tile aspect-[4/3] overflow-hidden">
               <img src="assets/stock/svc-automation-cinema.webp" alt="Home cinema and smart-home automation by NATS" class="w-full h-full object-cover" loading="lazy" width="1200" height="896">
             </div>
@@ -277,7 +308,7 @@
             </div>
           </a>
 
-          <a href="services.html#mep" class="group card overflow-hidden flex flex-col reveal">
+          <a href="services.html#mep" class="group card tilt overflow-hidden flex flex-col reveal">
             <div class="tile aspect-[4/3] overflow-hidden">
               <img src="assets/stock/svc-mep.webp" alt="MEP ductwork and services installation by NATS" class="w-full h-full object-cover" loading="lazy" width="1200" height="896">
             </div>
@@ -291,7 +322,7 @@
             </div>
           </a>
 
-          <a href="services.html#interior-design" class="group card overflow-hidden flex flex-col reveal">
+          <a href="services.html#interior-design" class="group card tilt overflow-hidden flex flex-col reveal">
             <div class="tile aspect-[4/3] overflow-hidden">
               <img src="assets/stock/svc-interior-design.webp" alt="Interior design and space planning by NATS" class="w-full h-full object-cover" loading="lazy" width="1200" height="896">
             </div>
@@ -305,7 +336,7 @@
             </div>
           </a>
 
-          <a href="services.html#facilities" class="group card overflow-hidden flex flex-col reveal">
+          <a href="services.html#facilities" class="group card tilt overflow-hidden flex flex-col reveal">
             <div class="tile aspect-[4/3] overflow-hidden">
               <img src="assets/stock/svc-facilities.webp" alt="Facilities management and AMC by NATS" class="w-full h-full object-cover" loading="lazy" width="1200" height="896">
             </div>
@@ -362,6 +393,47 @@
       </div>
     </section>
 
+    <!-- SIGNATURE: BEFORE / AFTER (dark) -->
+    <section class="section-dark py-20 sm:py-28">
+      <div class="mx-auto max-w-[1440px] px-5 sm:px-8">
+        <div class="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-end mb-10">
+          <div class="reveal">
+            <p class="eyebrow eyebrow-light mb-6">See the difference</p>
+            <h2 class="split font-display font-medium text-[38px] sm:text-[52px] leading-[1.03] text-cream">
+              From empty space to <span class="text-[#d8b487] italic">finished, in one programme.</span>
+            </h2>
+          </div>
+          <div class="reveal">
+            <p class="text-[15.5px] leading-relaxed text-cream/75">
+              Drag the handle to see what changes when design, build, landscaping and automation run as a single project — no gaps between trades. Grab the slider, or use the arrow keys.
+            </p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-5 reveal">
+          <figure>
+            <div class="ba" tabindex="0" role="slider" aria-label="Before and after: backyard transformation" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--x:50%">
+              <img src="assets/transform/yard-before.webp" alt="Bare sand plot before landscaping" width="1280" height="960">
+              <div class="after-wrap"><img src="assets/transform/yard-after.webp" alt="Finished landscaped backyard with pool and lighting at dusk" width="1280" height="960"></div>
+              <div class="handle" aria-hidden="true"></div>
+              <div class="knob" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7l-5 5 5 5"/><path d="M15 7l5 5-5 5"/></svg></div>
+              <span class="lbl b" aria-hidden="true">Before</span><span class="lbl a" aria-hidden="true">After</span>
+            </div>
+            <figcaption class="text-[12px] text-cream/50 mt-3">Backyard — landscaping, pool &amp; outdoor lighting. Concept visual.</figcaption>
+          </figure>
+          <figure>
+            <div class="ba" tabindex="0" role="slider" aria-label="Before and after: majlis fit-out" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="--x:50%">
+              <img src="assets/transform/majlis-before.webp" alt="Empty majlis room before fit-out" width="1280" height="960">
+              <div class="after-wrap"><img src="assets/transform/majlis-after.webp" alt="Finished luxury majlis after interior fit-out" width="1280" height="960"></div>
+              <div class="handle" aria-hidden="true"></div>
+              <div class="knob" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7l-5 5 5 5"/><path d="M15 7l5 5-5 5"/></svg></div>
+              <span class="lbl b" aria-hidden="true">Before</span><span class="lbl a" aria-hidden="true">After</span>
+            </div>
+            <figcaption class="text-[12px] text-cream/50 mt-3">Majlis — interior design &amp; fit-out. Concept visual.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- DESIGN IDEAS TEASER (sand) — full library on ideas.html -->
     <section id="ideas" class="section-sand py-20 sm:py-28">
       <div class="mx-auto max-w-[1440px] px-5 sm:px-8">
@@ -401,6 +473,25 @@
       </div>
     </section>
 
+    <!-- PALETTE MARQUEE (sand) -->
+    <section class="section-sand pb-20 sm:pb-28 -mt-4 sm:-mt-8 overflow-hidden">
+      <div class="mx-auto max-w-[1440px] px-5 sm:px-8 mb-8">
+        <p class="eyebrow">Straight from our Instagram · @natsdubai</p>
+      </div>
+      <div class="marquee" role="list" aria-label="Palette and material ideas">
+        <div class="marquee-track" data-marquee>
+          <a href="ideas.html#living-1" class="marquee-item group block" role="listitem"><div class="tile aspect-[3/4] overflow-hidden rounded-lg"><img src="assets/ideas/rooms/living-blush.webp" alt="Blush and ivory living room" loading="lazy" width="230" height="306" class="w-full h-full object-cover"></div><p class="mt-2 text-[12.5px] text-warm">Living · Blush &amp; Ivory</p></a>
+          <a href="ideas.html#bedroom" class="marquee-item group block" role="listitem"><div class="tile aspect-[3/4] overflow-hidden rounded-lg"><img src="assets/ideas/rooms/bedroom-terracotta.webp" alt="Terracotta bedroom" loading="lazy" width="230" height="306" class="w-full h-full object-cover"></div><p class="mt-2 text-[12.5px] text-warm">Bedroom · Terracotta</p></a>
+          <a href="ideas.html#kitchen" class="marquee-item group block" role="listitem"><div class="tile aspect-[3/4] overflow-hidden rounded-lg"><img src="assets/ideas/rooms/kitchen-olive.webp" alt="Olive and beige kitchen" loading="lazy" width="230" height="306" class="w-full h-full object-cover"></div><p class="mt-2 text-[12.5px] text-warm">Kitchen · Olive &amp; Beige</p></a>
+          <a href="ideas.html#bathroom" class="marquee-item group block" role="listitem"><div class="tile aspect-[3/4] overflow-hidden rounded-lg"><img src="assets/ideas/rooms/bathroom-viola.webp" alt="Calacatta Viola bathroom" loading="lazy" width="230" height="306" class="w-full h-full object-cover"></div><p class="mt-2 text-[12.5px] text-warm">Bathroom · Calacatta Viola</p></a>
+          <a href="ideas.html#living-2" class="marquee-item group block" role="listitem"><div class="tile aspect-[3/4] overflow-hidden rounded-lg"><img src="assets/ideas/rooms/living-teal.webp" alt="Deep teal living room" loading="lazy" width="230" height="306" class="w-full h-full object-cover"></div><p class="mt-2 text-[12.5px] text-warm">Living · Deep Teal</p></a>
+          <a href="ideas.html#bedroom" class="marquee-item group block" role="listitem"><div class="tile aspect-[3/4] overflow-hidden rounded-lg"><img src="assets/ideas/rooms/bedroom-blue.webp" alt="Dusty blue bedroom" loading="lazy" width="230" height="306" class="w-full h-full object-cover"></div><p class="mt-2 text-[12.5px] text-warm">Bedroom · Dusty Blue</p></a>
+          <a href="ideas.html#kitchen" class="marquee-item group block" role="listitem"><div class="tile aspect-[3/4] overflow-hidden rounded-lg"><img src="assets/ideas/rooms/kitchen-oak.webp" alt="Dark oak kitchen" loading="lazy" width="230" height="306" class="w-full h-full object-cover"></div><p class="mt-2 text-[12.5px] text-warm">Kitchen · Dark Oak</p></a>
+          <a href="ideas.html#panel-marble" class="marquee-item group block" role="listitem"><div class="tile aspect-[3/4] overflow-hidden rounded-lg"><img src="assets/ideas/rooms/pair-sage.webp" alt="Sage panel and white onyx living room" loading="lazy" width="230" height="306" class="w-full h-full object-cover"></div><p class="mt-2 text-[12.5px] text-warm">Panels · Sage + Onyx</p></a>
+        </div>
+      </div>
+    </section>
+
     <!-- DARK MOMENT (espresso, full-bleed) -->
     <section id="approach" class="relative min-h-[72vh] flex items-center overflow-hidden">
       <div class="hero-media">
@@ -417,42 +508,77 @@
       </div>
     </section>
 
-    <!-- PROCESS (cream) -->
+    <!-- PROCESS (cream, scroll-driven) -->
     <section class="section-cream py-20 sm:py-28">
-      <div class="mx-auto max-w-[1440px] px-5 sm:px-8">
-        <div class="reveal mb-14">
+      <div class="mx-auto max-w-[1440px] px-5 sm:px-8 grid lg:grid-cols-[0.82fr_1.18fr] gap-12 lg:gap-20">
+        <div class="lg:sticky lg:top-28 lg:self-start reveal">
           <p class="eyebrow mb-6">The process</p>
-          <h2 class="font-display font-medium text-[38px] sm:text-[50px] leading-[1.03] text-warm">
+          <h2 class="font-display font-medium text-[38px] sm:text-[52px] leading-[1.03] text-warm">
             From first visit to <span class="text-accent italic">handover.</span>
           </h2>
+          <p class="text-[15px] text-body leading-relaxed max-w-[40ch] mt-5">
+            Five steps, one team, one point of contact — so nothing falls through the gaps between trades.
+          </p>
         </div>
-        <ol class="grid sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-10">
-          <li class="reveal border-t border-line pt-5">
-            <div class="font-display text-[34px] text-accent leading-none mb-3">01</div>
-            <h3 class="font-display font-semibold text-[21px] text-warm mb-1.5">Free site visit</h3>
-            <p class="text-[13.5px] text-taupe leading-relaxed">We see the space, understand the brief, and talk budget honestly.</p>
+        <ol class="proc-rail space-y-8 sm:space-y-12">
+          <li class="proc-step grid grid-cols-[auto_1fr] gap-5 sm:gap-7 border-t border-line pt-6">
+            <div class="font-display text-[36px] sm:text-[44px] text-accent leading-none w-12">01</div>
+            <div><h3 class="font-display font-semibold text-[23px] sm:text-[26px] text-warm mb-1.5">Free site visit</h3><p class="text-[14px] text-taupe leading-relaxed max-w-[52ch]">We see the space, understand the brief, and talk budget honestly — at no cost.</p></div>
           </li>
-          <li class="reveal border-t border-line pt-5">
-            <div class="font-display text-[34px] text-accent leading-none mb-3">02</div>
-            <h3 class="font-display font-semibold text-[21px] text-warm mb-1.5">Design &amp; scope</h3>
-            <p class="text-[13.5px] text-taupe leading-relaxed">Drawings, materials and a written scope with a clear, itemised price.</p>
+          <li class="proc-step grid grid-cols-[auto_1fr] gap-5 sm:gap-7 border-t border-line pt-6">
+            <div class="font-display text-[36px] sm:text-[44px] text-accent leading-none w-12">02</div>
+            <div><h3 class="font-display font-semibold text-[23px] sm:text-[26px] text-warm mb-1.5">Design &amp; scope</h3><p class="text-[14px] text-taupe leading-relaxed max-w-[52ch]">Drawings, 3D visuals, materials and a written scope with a clear, itemised price.</p></div>
           </li>
-          <li class="reveal border-t border-line pt-5">
-            <div class="font-display text-[34px] text-accent leading-none mb-3">03</div>
-            <h3 class="font-display font-semibold text-[21px] text-warm mb-1.5">Build</h3>
-            <p class="text-[13.5px] text-taupe leading-relaxed">Every trade coordinated on one programme, managed by one lead.</p>
+          <li class="proc-step grid grid-cols-[auto_1fr] gap-5 sm:gap-7 border-t border-line pt-6">
+            <div class="font-display text-[36px] sm:text-[44px] text-accent leading-none w-12">03</div>
+            <div><h3 class="font-display font-semibold text-[23px] sm:text-[26px] text-warm mb-1.5">Build</h3><p class="text-[14px] text-taupe leading-relaxed max-w-[52ch]">Every trade — fit-out, MEP, pools, landscaping — coordinated on one programme by one lead.</p></div>
           </li>
-          <li class="reveal border-t border-line pt-5">
-            <div class="font-display text-[34px] text-accent leading-none mb-3">04</div>
-            <h3 class="font-display font-semibold text-[21px] text-warm mb-1.5">Automate</h3>
-            <p class="text-[13.5px] text-taupe leading-relaxed">Smart systems commissioned and tuned before the walls close up.</p>
+          <li class="proc-step grid grid-cols-[auto_1fr] gap-5 sm:gap-7 border-t border-line pt-6">
+            <div class="font-display text-[36px] sm:text-[44px] text-accent leading-none w-12">04</div>
+            <div><h3 class="font-display font-semibold text-[23px] sm:text-[26px] text-warm mb-1.5">Automate</h3><p class="text-[14px] text-taupe leading-relaxed max-w-[52ch]">Smart lighting, climate, security and cinema commissioned and tuned before the walls close up.</p></div>
           </li>
-          <li class="reveal border-t border-line pt-5">
-            <div class="font-display text-[34px] text-accent leading-none mb-3">05</div>
-            <h3 class="font-display font-semibold text-[21px] text-warm mb-1.5">Handover</h3>
-            <p class="text-[13.5px] text-taupe leading-relaxed">Snagged, cleaned, documented and handed over ready to use.</p>
+          <li class="proc-step grid grid-cols-[auto_1fr] gap-5 sm:gap-7 border-t border-line pt-6">
+            <div class="font-display text-[36px] sm:text-[44px] text-accent leading-none w-12">05</div>
+            <div><h3 class="font-display font-semibold text-[23px] sm:text-[26px] text-warm mb-1.5">Handover &amp; care</h3><p class="text-[14px] text-taupe leading-relaxed max-w-[52ch]">Snagged, cleaned, documented — and kept running with an optional annual maintenance contract.</p></div>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <!-- FAQ (sand) -->
+    <section id="faq" class="section-sand py-20 sm:py-28">
+      <div class="mx-auto max-w-[1440px] px-5 sm:px-8 grid lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-20">
+        <div class="reveal lg:sticky lg:top-28 lg:self-start">
+          <p class="eyebrow mb-6">Good to know</p>
+          <h2 class="font-display font-medium text-[38px] sm:text-[50px] leading-[1.03] text-warm">
+            Questions, <span class="text-accent italic">answered.</span>
+          </h2>
+          <p class="text-[15px] text-body leading-relaxed max-w-[38ch] mt-5">
+            Still unsure? <a href="https://wa.me/971522299418" class="font-semibold text-accent hover:underline">Message us on WhatsApp</a> — we usually reply within the hour.
+          </p>
+        </div>
+        <div class="reveal">
+          <details class="faq" open>
+            <summary><span class="font-display text-[22px] sm:text-[25px] text-warm font-medium">Which areas do you cover?</span><span class="faq-plus" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <div class="faq-a"><p class="text-[14.5px] text-body leading-relaxed max-w-[62ch]">We're based in Al Karama, Dubai and work on villas, apartments and commercial spaces across Dubai and the wider UAE.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="font-display text-[22px] sm:text-[25px] text-warm font-medium">Do you really handle everything under one contract?</span><span class="faq-plus" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <div class="faq-a"><p class="text-[14.5px] text-body leading-relaxed max-w-[62ch]">Yes. Fit-out, MEP, interior design, home automation &amp; cinema, swimming pools, landscaping and ongoing maintenance are all delivered by NATS on one licence — so you deal with a single project lead, not five subcontractors.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="font-display text-[22px] sm:text-[25px] text-warm font-medium">Is the first site visit really free?</span><span class="faq-plus" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <div class="faq-a"><p class="text-[14.5px] text-body leading-relaxed max-w-[62ch]">It is. We visit the space, understand the brief and give you an honest view on budget and timeline before anything is committed.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="font-display text-[22px] sm:text-[25px] text-warm font-medium">Do you maintain the project after handover?</span><span class="faq-plus" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <div class="faq-a"><p class="text-[14.5px] text-body leading-relaxed max-w-[62ch]">Yes — we offer annual maintenance contracts (AMC) covering fit-out, MEP and automation systems, so the space keeps working long after it's finished.</p></div>
+          </details>
+          <details class="faq">
+            <summary><span class="font-display text-[22px] sm:text-[25px] text-warm font-medium">How do I get an estimate?</span><span class="faq-plus" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <div class="faq-a"><p class="text-[14.5px] text-body leading-relaxed max-w-[62ch]">Try our <a href="calculator.html" class="font-semibold text-accent hover:underline">instant cost estimate</a> for a ballpark, then book a free site visit for a precise, itemised quote.</p></div>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -528,5 +654,6 @@
   </footer>
 
   <script src="assets/site.js"></script>
+  <script src="assets/motion.js" defer></script>
 </body>
 </html>

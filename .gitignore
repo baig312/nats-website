@@ -6,3 +6,9 @@ package-lock.json
 ALBUM/
 MARKETING-*.md
 SOCIAL-KIT/
+PROMO-VIDEO/
+
+# Design exploration — not for the live site
+index-atelier.html
+sample-*.html
+samples.html
