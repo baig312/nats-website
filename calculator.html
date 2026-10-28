@@ -76,111 +76,171 @@
         <h1 class="font-display text-cream font-medium text-[42px] sm:text-[64px] leading-[1.0] max-w-[16ch]">
           Estimate your <span class="text-[#d8b487] italic">project cost.</span>
         </h1>
-        <p class="text-[16px] sm:text-[17px] leading-relaxed text-cream/80 max-w-[52ch] mt-5">A quick, indicative price range for your turnkey project — refined into a fixed quotation after a free site visit.</p>
+        <p class="text-[16px] sm:text-[17px] leading-relaxed text-cream/80 max-w-[52ch] mt-5">Five quick questions for an instant price range and timeline, with no sign-up needed. We refine it into a fixed quotation after a free site visit.</p>
       </div>
     </section>
 
-    <!-- CALCULATOR (cream) -->
+    <!-- CALCULATOR — 5-step wizard (logic: assets/calculator.js, rates: assets/calculator-rates.js) -->
     <section class="section-cream py-16 sm:py-20">
-      <div class="mx-auto max-w-[1440px] px-5 sm:px-8">
+      <div class="mx-auto max-w-[1040px] px-5 sm:px-8">
 
-        <div class="reveal rounded-lg border border-accent/40 bg-[#241a0e] px-5 py-4 mb-10 flex items-start gap-3">
+        <div class="reveal rounded-lg border border-accent/40 bg-[#241a0e] px-5 py-4 mb-8 flex items-start gap-3">
           <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
-          <p class="text-[13.5px] text-warm leading-relaxed"><strong>Indicative estimate only.</strong> These figures are a planning guide, not a quotation — final pricing is always confirmed in writing after a free site visit. Rates may be updated at any time.</p>
+          <p class="text-[13.5px] text-warm leading-relaxed"><strong>Indicative estimate only.</strong> A planning guide, not a quotation. Final pricing is confirmed in writing after a free site visit. Nothing you enter here leaves your browser.</p>
         </div>
 
-        <form id="estimator-form" class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-start">
+        <form id="estimator-form" class="calc card p-5 sm:p-10" novalidate>
 
-          <div class="reveal space-y-8">
-            <div>
-              <label for="property-type" class="block eyebrow mb-3">Property type</label>
-              <select id="property-type" name="property-type" class="field">
-                <option value="villa">Villa</option>
-                <option value="apartment">Apartment</option>
-                <option value="commercial">Commercial / Office</option>
-              </select>
+          <ol class="calc-steps" aria-label="Estimator progress">
+            <li data-step-dot="1" class="is-active"><span>1</span><em>Property</em></li>
+            <li data-step-dot="2"><span>2</span><em>Size</em></li>
+            <li data-step-dot="3"><span>3</span><em>Scope</em></li>
+            <li data-step-dot="4"><span>4</span><em>Finish</em></li>
+            <li data-step-dot="5"><span>5</span><em>Extras</em></li>
+          </ol>
+
+          <!-- STEP 1 — property type -->
+          <fieldset class="calc-panel" data-step="1">
+            <legend class="calc-title">What type of property is it?</legend>
+            <div class="calc-grid calc-grid-4">
+              <label class="calc-opt"><input type="radio" name="property-type" value="apartment" class="sr-only" checked>
+                <span class="calc-opt-body">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1M11 21v-3h2v3"/></svg>
+                  <span class="calc-opt-title">Apartment</span><span class="calc-opt-desc">Studio to penthouse</span>
+                </span></label>
+              <label class="calc-opt"><input type="radio" name="property-type" value="townhouse" class="sr-only">
+                <span class="calc-opt-body">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21V11l5-4 5 4v10M12 21V11l5-4 5 4v10M1 21h22M6 21v-4h2v4M16 21v-4h2v4"/></svg>
+                  <span class="calc-opt-title">Townhouse</span><span class="calc-opt-desc">2–4 bedroom homes</span>
+                </span></label>
+              <label class="calc-opt"><input type="radio" name="property-type" value="villa" class="sr-only">
+                <span class="calc-opt-body">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l9-6 9 6v11M1 21h22M10 21v-5h4v5M6 13h2M16 13h2"/></svg>
+                  <span class="calc-opt-title">Villa</span><span class="calc-opt-desc">Standalone homes</span>
+                </span></label>
+              <label class="calc-opt"><input type="radio" name="property-type" value="commercial" class="sr-only">
+                <span class="calc-opt-body">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M8 7V4h8v3M3 12h18M11 12v2h2v-2"/></svg>
+                  <span class="calc-opt-title">Commercial</span><span class="calc-opt-desc">Office, retail, F&amp;B</span>
+                </span></label>
             </div>
+          </fieldset>
 
-            <div>
-              <span class="block eyebrow mb-3">Finish tier</span>
-              <div class="flex flex-wrap gap-3">
-                <input type="radio" name="tier" id="tier-standard" value="standard" class="peer/s sr-only" checked>
-                <label for="tier-standard" class="cursor-pointer rounded-full border border-line px-5 py-2.5 text-[13.5px] font-semibold text-warm peer-checked/s:bg-accent peer-checked/s:text-white peer-checked/s:border-accent transition-colors">Standard</label>
-                <input type="radio" name="tier" id="tier-premium" value="premium" class="peer/p sr-only">
-                <label for="tier-premium" class="cursor-pointer rounded-full border border-line px-5 py-2.5 text-[13.5px] font-semibold text-warm peer-checked/p:bg-accent peer-checked/p:text-white peer-checked/p:border-accent transition-colors">Premium</label>
-                <input type="radio" name="tier" id="tier-ultra" value="ultra" class="peer/u sr-only">
-                <label for="tier-ultra" class="cursor-pointer rounded-full border border-line px-5 py-2.5 text-[13.5px] font-semibold text-warm peer-checked/u:bg-accent peer-checked/u:text-white peer-checked/u:border-accent transition-colors">Ultra</label>
+          <!-- STEP 2 — size -->
+          <fieldset class="calc-panel" data-step="2" hidden>
+            <legend class="calc-title">How big is the space?</legend>
+            <div class="grid sm:grid-cols-2 gap-8 sm:gap-10">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <label for="area" class="eyebrow">Built-up area</label>
+                  <div class="calc-unit" role="group" aria-label="Area unit">
+                    <label><input type="radio" name="unit" value="m2" class="sr-only" checked><span>m²</span></label>
+                    <label><input type="radio" name="unit" value="ft2" class="sr-only"><span>ft²</span></label>
+                  </div>
+                </div>
+                <input type="number" id="area" name="area" min="10" max="60000" step="1" value="120" inputmode="numeric" class="field calc-area" required>
+                <p class="text-[12.5px] text-taupe mt-2" id="area-hint">Not sure? Set the bedrooms and we'll suggest a typical size.</p>
+              </div>
+              <div class="space-y-7">
+                <div id="bedrooms-wrap">
+                  <div class="flex items-center justify-between mb-2"><label for="bedrooms" class="eyebrow">Bedrooms</label><output id="bedrooms-out" class="calc-out">2</output></div>
+                  <input type="range" id="bedrooms" name="bedrooms" min="0" max="8" step="1" value="2" class="calc-range">
+                  <div class="calc-ticks"><span>Studio</span><span>2</span><span>4</span><span>6</span><span>8+</span></div>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-2"><label for="bathrooms" class="eyebrow">Bathrooms</label><output id="bathrooms-out" class="calc-out">2</output></div>
+                  <input type="range" id="bathrooms" name="bathrooms" min="0" max="8" step="1" value="2" class="calc-range">
+                  <div class="calc-ticks"><span>0</span><span>2</span><span>4</span><span>6</span><span>8+</span></div>
+                </div>
               </div>
             </div>
+          </fieldset>
 
-            <div>
-              <label for="area" class="block eyebrow mb-3">Built-up area (m²)</label>
-              <input type="number" id="area" name="area" min="20" max="5000" step="1" value="300" required class="field max-w-[220px]">
+          <!-- STEP 3 — scope -->
+          <fieldset class="calc-panel" data-step="3" hidden>
+            <legend class="calc-title">How much work do you need?</legend>
+            <div class="calc-grid calc-grid-3">
+              <label class="calc-opt"><input type="radio" name="scope" value="light" class="sr-only">
+                <span class="calc-opt-body"><span class="calc-opt-title">Light refresh</span><span class="calc-opt-desc">Painting, minor repairs, new fixtures and fittings.</span></span></label>
+              <label class="calc-opt"><input type="radio" name="scope" value="standard" class="sr-only" checked>
+                <span class="calc-opt-body"><span class="calc-opt-title">Standard renovation</span><span class="calc-opt-desc">Adds flooring, ceilings, lighting, joinery and kitchen/bath updates.</span></span></label>
+              <label class="calc-opt"><input type="radio" name="scope" value="turnkey" class="sr-only">
+                <span class="calc-opt-body"><span class="calc-opt-title">Full turnkey</span><span class="calc-opt-desc">Design, strip-out, MEP and every finish, through to handover.</span></span></label>
             </div>
+          </fieldset>
 
-            <div>
-              <span class="block eyebrow mb-3">Add-on services</span>
-              <div class="space-y-3">
-                <label class="card flex items-center gap-3 p-4 cursor-pointer">
-                  <input type="checkbox" name="automation" class="w-4 h-4 accent-accent shrink-0">
-                  <span class="text-[14px] text-warm">Home Automation</span>
-                </label>
-                <label class="card flex items-center gap-3 p-4 cursor-pointer">
-                  <input type="checkbox" name="cinema" class="w-4 h-4 accent-accent shrink-0">
-                  <span class="text-[14px] text-warm">Home Cinema</span>
-                </label>
-                <label class="card flex items-center gap-3 p-4 cursor-pointer">
-                  <input type="checkbox" name="pool" class="w-4 h-4 accent-accent shrink-0">
-                  <span class="text-[14px] text-warm">Swimming Pool</span>
-                </label>
-                <div id="pool-size-wrap" class="hidden pl-7">
-                  <label for="pool-size" class="block text-[12px] text-taupe mb-1.5">Pool size</label>
-                  <select id="pool-size" name="pool-size" class="field max-w-[260px]">
-                    <option value="small">Small — under 20 m²</option>
-                    <option value="medium" selected>Medium — 20 to 40 m²</option>
-                    <option value="large">Large — 40 m² and above</option>
-                  </select>
-                </div>
-                <label class="card flex items-center gap-3 p-4 cursor-pointer">
-                  <input type="checkbox" name="landscape" class="w-4 h-4 accent-accent shrink-0">
-                  <span class="text-[14px] text-warm">Landscaping</span>
-                </label>
-                <div id="land-area-wrap" class="hidden pl-7">
-                  <label for="land-area" class="block text-[12px] text-taupe mb-1.5">Garden area (m²)</label>
-                  <input type="number" id="land-area" name="land-area" min="10" max="2000" step="1" value="100" class="field max-w-[220px]">
-                </div>
+          <!-- STEP 4 — finish -->
+          <fieldset class="calc-panel" data-step="4" hidden>
+            <legend class="calc-title">Which finish level?</legend>
+            <div class="calc-grid calc-grid-3">
+              <label class="calc-opt"><input type="radio" name="tier" value="standard" class="sr-only">
+                <span class="calc-opt-body"><span class="calc-opt-title">Standard</span><span class="calc-opt-desc">Quality, durable materials at a sensible budget.</span></span></label>
+              <label class="calc-opt"><input type="radio" name="tier" value="premium" class="sr-only" checked>
+                <span class="calc-opt-body"><span class="calc-opt-title">Premium</span><span class="calc-opt-desc">High-end finishes, natural stone, bespoke joinery.</span></span></label>
+              <label class="calc-opt"><input type="radio" name="tier" value="ultra" class="sr-only">
+                <span class="calc-opt-body"><span class="calc-opt-title">Ultra-premium</span><span class="calc-opt-desc">Top-tier brands, rare materials, fully custom design.</span></span></label>
+            </div>
+          </fieldset>
+
+          <!-- STEP 5 — extras -->
+          <fieldset class="calc-panel" data-step="5" hidden>
+            <legend class="calc-title">Anything else? <span class="text-taupe font-sans text-[15px] font-normal">(optional)</span></legend>
+            <div class="calc-grid calc-grid-2">
+              <label class="calc-opt"><input type="checkbox" name="automation" class="sr-only">
+                <span class="calc-opt-body calc-opt-row"><span class="calc-check" aria-hidden="true"></span><span><span class="calc-opt-title">Home automation</span><span class="calc-opt-desc">Lighting, climate, curtains and security on one app.</span></span></span></label>
+              <label class="calc-opt"><input type="checkbox" name="cinema" class="sr-only">
+                <span class="calc-opt-body calc-opt-row"><span class="calc-check" aria-hidden="true"></span><span><span class="calc-opt-title">Home cinema</span><span class="calc-opt-desc">A dedicated, acoustically treated cinema room.</span></span></span></label>
+              <label class="calc-opt"><input type="checkbox" name="pool" class="sr-only">
+                <span class="calc-opt-body calc-opt-row"><span class="calc-check" aria-hidden="true"></span><span><span class="calc-opt-title">Swimming pool</span><span class="calc-opt-desc">New pool, built and finished.</span></span></span></label>
+              <label class="calc-opt"><input type="checkbox" name="landscape" class="sr-only">
+                <span class="calc-opt-body calc-opt-row"><span class="calc-check" aria-hidden="true"></span><span><span class="calc-opt-title">Landscaping</span><span class="calc-opt-desc">Garden, hardscape, lighting and irrigation.</span></span></span></label>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-5 mt-5">
+              <div id="pool-size-wrap" hidden>
+                <label for="pool-size" class="block eyebrow mb-2">Pool size</label>
+                <select id="pool-size" name="pool-size" class="field">
+                  <option value="small">Small — under 20 m²</option>
+                  <option value="medium" selected>Medium — 20 to 40 m²</option>
+                  <option value="large">Large — 40 m² and above</option>
+                </select>
+              </div>
+              <div id="land-area-wrap" hidden>
+                <label for="land-area" class="block eyebrow mb-2">Garden area (m²)</label>
+                <input type="number" id="land-area" name="land-area" min="10" max="5000" step="1" value="100" inputmode="numeric" class="field">
               </div>
             </div>
+          </fieldset>
 
-            <button type="submit" class="btn btn-accent w-full sm:w-auto">Calculate my estimate</button>
+          <!-- RESULT -->
+          <div class="calc-panel" data-step="6" hidden aria-live="polite">
+            <p class="eyebrow mb-3">Your indicative estimate</p>
+            <p class="font-display font-medium text-warm text-[36px] sm:text-[52px] leading-[1.05]">
+              <span id="total-low"></span> <span class="text-taupe text-[22px] font-sans">–</span> <span id="total-high"></span>
+            </p>
+            <p id="result-summary" class="text-[14px] text-taupe mt-2"></p>
+
+            <div class="grid sm:grid-cols-2 gap-4 mt-8">
+              <div class="calc-stat"><span class="eyebrow">Estimated timeline</span><strong id="timeline"></strong></div>
+              <div class="calc-stat"><span class="eyebrow">Annual maintenance (AMC)</span><strong id="amc-estimate"></strong></div>
+            </div>
+
+            <div class="mt-8">
+              <p class="eyebrow mb-1">Breakdown</p>
+              <div id="line-items"></div>
+            </div>
+
+            <p class="text-[12px] text-taupe leading-relaxed mt-6">A planning estimate from indicative rates, not a fixed quotation. Your final price is confirmed in writing after a free, no-obligation site visit.</p>
+            <div class="flex flex-wrap gap-3 mt-7">
+              <a id="wa-estimate" href="https://wa.me/971522299418" target="_blank" rel="noopener" class="btn btn-accent">Send this to NATS on WhatsApp</a>
+              <a href="contact.html" class="btn btn-outline-dark">Book a free site visit</a>
+              <button type="button" id="calc-restart" class="btn btn-outline-dark">Start again</button>
+            </div>
           </div>
 
-          <div class="reveal lg:sticky lg:top-28">
-            <div class="card p-7 sm:p-8">
-              <div id="results-empty" class="text-center py-10">
-                <svg class="w-10 h-10 text-taupe/50 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h4"/></svg>
-                <p class="text-[14px] text-taupe">Fill in the form and select "Calculate my estimate" to see your indicative project cost.</p>
-              </div>
-
-              <div id="results-filled" class="hidden">
-                <p class="eyebrow mb-3">Estimated project cost</p>
-                <p class="font-display font-medium text-[30px] sm:text-[36px] leading-tight text-warm">
-                  <span id="total-low"></span> <span class="text-taupe text-[18px] font-sans">–</span> <span id="total-high"></span>
-                </p>
-                <div id="line-items" class="mt-6"></div>
-                <div class="mt-5 pt-5 border-t border-line flex items-center justify-between text-[13px]">
-                  <span class="text-taupe">Estimated annual AMC</span>
-                  <span id="amc-estimate" class="text-warm font-semibold"></span>
-                </div>
-                <p class="text-[12px] text-taupe leading-relaxed mt-6">This is a planning estimate based on indicative rates, not a fixed quotation. Your final price is confirmed in writing after a free, no-obligation site visit.</p>
-                <div class="flex flex-col gap-3 mt-6">
-                  <a href="contact.html" class="btn btn-accent">Book a free site visit</a>
-                  <a href="https://wa.me/971522299418" class="btn btn-outline-dark">Discuss on WhatsApp</a>
-                </div>
-              </div>
-            </div>
+          <div class="calc-nav" id="calc-nav">
+            <button type="button" id="calc-back" class="btn btn-outline-dark" hidden>&larr; Back</button>
+            <button type="submit" id="calc-next" class="btn btn-accent ml-auto">Continue &rarr;</button>
           </div>
-
         </form>
       </div>
     </section>
