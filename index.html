@@ -182,7 +182,7 @@
         </p>
         <div class="flex flex-wrap gap-3.5 mt-9">
           <a href="contact.html" class="btn btn-accent magnetic">Book a private site visit</a>
-          <a href="#services" class="btn btn-outline-light">Explore our work</a>
+          <a href="calculator.html" class="btn btn-outline-light calc-hero-btn"><span class="calc-hero-dot" aria-hidden="true"></span>Instant cost estimate</a>
         </div>
         <div class="trust mt-11 pt-7 border-t border-cream/15 max-w-[600px]">
           <div class="ti"><span class="tn">10+</span><span class="tl">Years</span></div>
@@ -247,6 +247,37 @@
             <dd class="text-[12.5px] text-taupe mt-5 pt-4 border-t border-line">Served and counting</dd>
           </div>
         </dl>
+      </div>
+    </section>
+
+    <!-- INSTANT ESTIMATE TEASER — links into calculator.html (sample figures computed from assets/calculator-rates.js) -->
+    <section id="estimate" class="section-cream pb-20 sm:pb-28">
+      <div class="mx-auto max-w-[1440px] px-5 sm:px-8">
+        <div class="est-teaser card reveal">
+          <div class="est-copy">
+            <p class="eyebrow mb-5"><span class="est-live" aria-hidden="true"></span>Instant cost estimate</p>
+            <h2 class="font-display font-medium text-[38px] sm:text-[54px] leading-[1.02] text-warm">
+              What will your project cost? <span class="text-accent italic">Find out in 60 seconds.</span>
+            </h2>
+            <p class="text-[15.5px] leading-relaxed text-body mt-5 max-w-[50ch]">Five quick questions give you a price range, a week-by-week timeline and a budget breakdown, then connect you with our team on WhatsApp.</p>
+            <p class="eyebrow mt-8 mb-3">Start with your property</p>
+            <div class="est-types">
+              <a href="calculator.html?type=apartment#estimator"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1M11 21v-3h2v3"/></svg>Apartment</a>
+              <a href="calculator.html?type=townhouse#estimator"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21V11l5-4 5 4v10M12 21V11l5-4 5 4v10M1 21h22"/></svg>Townhouse</a>
+              <a href="calculator.html?type=villa#estimator"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l9-6 9 6v11M1 21h22M10 21v-5h4v5"/></svg>Villa</a>
+              <a href="calculator.html?type=commercial#estimator"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M8 7V4h8v3M3 12h18"/></svg>Commercial</a>
+            </div>
+          </div>
+          <a href="calculator.html" class="est-demo" aria-label="Open the cost estimator">
+            <span class="est-demo-tag">Sample estimate</span>
+            <span class="est-demo-title" id="est-demo-title">2-bedroom apartment</span>
+            <span class="est-demo-sub" id="est-demo-sub">Premium finish · standard renovation</span>
+            <span class="est-demo-total" id="est-demo-total">AED 0 – 0</span>
+            <span class="est-demo-bars" id="est-demo-bars"></span>
+            <span class="est-demo-foot"><span id="est-demo-weeks">— weeks</span><span class="est-demo-cta">Get yours &rarr;</span></span>
+            <span class="est-demo-dots" id="est-demo-dots" aria-hidden="true"></span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -689,5 +720,7 @@
 
   <script src="assets/site.js"></script>
   <script src="assets/motion.js" defer></script>
+  <script src="assets/calculator-rates.js" defer></script>
+  <script src="assets/estimate-teaser.js" defer></script>
 </body>
 </html>
